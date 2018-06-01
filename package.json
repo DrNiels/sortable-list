@@ -1,5 +1,5 @@
 {
-  "name": "@polymer/sortable-list",
+  "name": "dr-niels-sortable-list",
   "version": "1.0.0",
   "resolutions": {
     "inherits": "2.0.3",
