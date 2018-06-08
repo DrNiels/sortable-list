@@ -265,7 +265,9 @@ class SortableList extends GestureEventListeners(PolymerElement) {
   }
 
   _onTouchMove(event) {
-    event.preventDefault();
+    if (!this.disabled) {
+        event.preventDefault();
+    }
   }
 
   _updateItems() {
