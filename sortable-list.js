@@ -15,6 +15,7 @@ import { GestureEventListeners } from '@polymer/polymer/lib/mixins/gesture-event
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import { idlePeriod } from '@polymer/polymer/lib/utils/async.js';
 import { addListener, removeListener } from '@polymer/polymer/lib/utils/gestures.js';
+import '@webcomponents/shadycss/apply-shim.min';
 
 class SortableList extends GestureEventListeners(PolymerElement) {
   static get template() {
@@ -24,7 +25,7 @@ class SortableList extends GestureEventListeners(PolymerElement) {
         display: inline-block;
       }
 
-      ::slotted(*) {
+      #items ::slotted(*) {
         user-drag: none;
         user-select: none;
         -moz-user-select: none;
@@ -34,25 +35,36 @@ class SortableList extends GestureEventListeners(PolymerElement) {
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       }
 
-      ::slotted(.item--transform) {
+      #items ::slotted(.item--transform) {
         left: 0;
         margin: 0 !important;
-        position: fixed !important;
+        position: absolute !important;
         top: 0;
         transition: transform 0.2s cubic-bezier(0.333, 0, 0, 1);
         will-change: transform;
         z-index: 1;
       }
 
-      ::slotted(.item--pressed) {
+      #items ::slotted(.item--pressed) {
         transition: none !important;
       }
 
-      ::slotted(.item--dragged) {
+      #items ::slotted(.item--dragged) {
         -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
         box-shadow: 0 2px 10px rgba(0,0,0,.2);
         filter: brightness(1.1);
         z-index: 2;
+      }
+      
+      #items {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        @apply --sortable-list-container;
+
+        /* needs to be positioned */        
+        position: relative;
       }
     </style>
     
