@@ -60,7 +60,7 @@ class SortableList extends GestureEventListeners(PolymerElement) {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
+        justify-content: left;
         @apply --sortable-list-container;
 
         /* needs to be positioned */        
