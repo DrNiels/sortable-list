@@ -1,3 +1,5 @@
+This is a Polymer 3 conversion of the sortable-list element from pdgago (https://github.com/sharedlabs/sortable-list) with some minor adjustments. The readme was not updated and is still the one from the original sotable-list element!
+
 [![License](https://img.shields.io/github/license/sharedlabs/sortable-list.svg?style=flat-square)](https://github.com/sharedlabs/sortable-list/blob/master/LICENSE.md)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://beta.webcomponents.org/element/sharedlabs/sortable-list)
 
